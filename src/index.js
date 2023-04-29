@@ -5,6 +5,7 @@ import {
   createProductsMarkup,
   creatSingleProductMarkup,
 } from "./services/markupService";
+import { onNewProductFormSubmit } from "./js/onNewProductFormSubmit";
 import { refs } from "./js/refs";
 
 
@@ -28,5 +29,8 @@ async function onSingleProductFormSubmit(event) {
 	const response = await getProductById(id);
 	refs.singleProductDiv.innerHTML = creatSingleProductMarkup(response);
 }
+
+refs.newProductForm.addEventListener("submit", onNewProductFormSubmit);
+
 
 
